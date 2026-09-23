@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NovaCraft Studio creates premium, modern and responsive websites for brands and businesses.">
+  <meta name="theme-color" content="#08090d">
+  <title>NovaCraft Studio | Web Design & Development</title>
+
+  <style>
+    :root{
+      --bg:#07080c;
+      --bg2:#0d0f16;
+      --card:rgba(255,255,255,.055);
+      --border:rgba(255,255,255,.11);
+      --text:#f6f7fb;
+      --muted:#9da3b3;
+      --accent:#7c5cff;
+      --accent2:#35b8ff;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at 15% 10%,rgba(124,92,255,.16),transparent 30%),
+        radial-gradient(circle at 85% 25%,rgba(53,184,255,.12),transparent 28%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    .container{
+      width:min(92%,var(--max));
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:1000;
+      background:rgba(7,8,12,.68);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+
+    .nav-inner{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      font-size:1.15rem;
+      font-weight:800;
+      letter-spacing:.03em;
+    }
+
+    .logo span{
+      color:#8b72ff;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      font-size:.92rem;
+      color:#c5c9d5;
+      transition:.25s;
+    }
+
+    .nav-links a:hover{
+      color:#fff;
+    }
+
+    .nav-cta{
+      padding:10px 17px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+    }
+
+    .menu{
+      display:none;
+      font-size:1.5rem;
+      cursor:pointer;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:130px 0 80px;
+      position:relative;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:55px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:8px 13px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:#cbd0df;
+      background:rgba(255,255,255,.035);
+      font-size:.82rem;
+      margin-bottom:24px;
+    }
+
+    .dot{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#65e6a7;
+      box-shadow:0 0 14px #65e6a7;
+    }
+
+    h1{
+      font-size:clamp(3rem,7vw,6.2rem);
+      line-height:.98;
+      letter-spacing:-.055em;
+      max-width:850px;
+    }
+
+    .gradient{
+      background:linear-gradient(100deg,#fff 20%,#9d8cff 55%,#58caff);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .hero p{
+      margin:25px 0 32px;
+      color:var(--muted);
+      font-size:1.08rem;
+      max-width:650px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:13px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:13px 20px;
+      border-radius:12px;
+      font-weight:700;
+      border:1px solid var(--border);
+      transition:.25s;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,#7c5cff,#4aaeff);
+      border:none;
+      box-shadow:0 12px 35px rgba(102,91,255,.22);
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.04);
+    }
+
+    /* HERO CARD */
+
+    .hero-card{
+      min-height:470px;
+      border:1px solid var(--border);
+      border-radius:30px;
+      background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.025)
+      );
+      box-shadow:0 30px 100px rgba(0,0,0,.35);
+      position:relative;
+      overflow:hidden;
+      padding:28px;
+    }
+
+    .orb{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(3px);
+    }
+
+    .orb.one{
+      width:230px;
+      height:230px;
+      right:-70px;
+      top:-60px;
+      background:rgba(124,92,255,.28);
+    }
+
+    .orb.two{
+      width:180px;
+      height:180px;
+      left:-80px;
+      bottom:-40px;
+      background:rgba(53,184,255,.18);
+    }
+
+    .mockup{
+      position:absolute;
+      inset:70px 35px 35px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.13);
+      background:#0a0b10;
+      box-shadow:0 25px 70px rgba(0,0,0,.4);
+      overflow:hidden;
+    }
+
+    .mock-top{
+      height:42px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      display:flex;
+      align-items:center;
+      gap:7px;
+      padding:0 15px;
+    }
+
+    .mock-top i{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#444;
+    }
+
+    .mock-body{
+      padding:30px;
+    }
+
+    .mock-line{
+      height:12px;
+      border-radius:20px;
+      background:rgba(255,255,255,.1);
+      margin-bottom:13px;
+    }
+
+    .mock-line.big{
+      width:75%;
+      height:30px;
+      background:linear-gradient(
+        90deg,
+        rgba(124,92,255,.7),
+        rgba(53,184,255,.35)
+      );
+    }
+
+    .mock-line.mid{
+      width:52%;
+    }
+
+    .mock-boxes{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .mock-box{
+      height:105px;
+      border-radius:14px;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:105px 0;
+    }
+
+    .section-head{
+      max-width:720px;
+      margin-bottom:45px;
+    }
+
+    .kicker{
+      font-size:.8rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      color:#8e7cff;
+      font-weight:800;
+    }
+
+    h2{
+      font-size:clamp(2.1rem,4vw,3.5rem);
+      line-height:1.08;
+      letter-spacing:-.035em;
+      margin-top:10px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      margin-top:15px;
+    }
+
+    /* SERVICES */
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .service{
+      padding:28px;
+      border:1px solid var(--border);
+      border-radius:22px;
+      background:var(--card);
+      transition:.3s;
+    }
+
+    .service:hover{
+      transform:translateY(-6px);
+      border-color:rgba(124,92,255,.45);
+    }
+
+    .icon{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(
+        135deg,
+        rgba(124,92,255,.24),
+        rgba(53,184,255,.15)
+      );
+      margin-bottom:22px;
+      font-size:1.25rem;
+    }
+
+    .service h3{
+      font-size:1.12rem;
+      margin-bottom:8px;
+    }
+
+    .service p{
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    /* PROJECTS */
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .project{
+      min-height:300px;
+      border-radius:24px;
+      border:1px solid var(--border);
+      padding:25px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      overflow:hidden;
+      position:relative;
+      background:linear-gradient(145deg,#141524,#090a0e);
+    }
+
+    .project::before{
+      content:"";
+      position:absolute;
+      width:230px;
+      height:230px;
+      border-radius:50%;
+      top:-70px;
+      right:-60px;
+      background:rgba(124,92,255,.22);
+      filter:blur(5px);
+    }
+
+    .project:nth-child(2)::before{
+      background:rgba(53,184,255,.2);
+    }
+
+    .project:nth-child(3)::before{
+      background:rgba(182,93,255,.2);
+    }
+
+    .project small,
+    .project h3,
+    .project p{
+      position:relative;
+    }
+
+    .project small{
+      color:#9e92ff;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .project h3{
+      font-size:1.35rem;
+      margin:7px 0;
+    }
+
+    .project p{
+      color:#a8adba;
+      font-size:.9rem;
+    }
+
+    /* PROCESS */
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .step{
+      border-top:1px solid var(--border);
+      padding-top:20px;
+    }
+
+    .step-number{
+      font-size:.8rem;
+      color:#8d7cff;
+      font-weight:800;
+    }
+
+    .step h3{
+      margin:8px 0;
+    }
+
+    .step p{
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    /* CONTACT */
+
+    .contact-wrap{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:25px;
+      padding:30px;
+      border:1px solid var(--border);
+      border-radius:28px;
+      background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.06),
+        rgba(255,255,255,.025)
+      );
+    }
+
+    .contact-info{
+      padding:18px;
+    }
+
+    .contact-info p{
+      color:var(--muted);
+      margin:16px 0 25px;
+    }
+
+    .contact-item{
+      margin:18px 0;
+    }
+
+    .contact-item span{
+      display:block;
+      color:#858b9b;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.1em;
+    }
+
+    .contact-item a{
+      font-weight:650;
+    }
+
+    form{
+      display:grid;
+      gap:13px;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      border:1px solid var(--border);
+      outline:none;
+      background:rgba(0,0,0,.2);
+      color:#fff;
+      border-radius:13px;
+      padding:14px 15px;
+      font:inherit;
+    }
+
+    input:focus,
+    textarea:focus{
+      border-color:rgba(124,92,255,.75);
+    }
+
+    textarea{
+      min-height:150px;
+      resize:vertical;
+    }
+
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:13px;
+    }
+
+    .submit{
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:30px 0 45px;
+      border-top:1px solid rgba(255,255,255,.07);
+      color:#7e8492;
+    }
+
+    .footer-inner{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+    }
+
+    .footer-inner strong{
+      color:#dce0e9;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:850px){
+
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        padding:20px;
+        background:#0a0b10;
+        border-bottom:1px solid var(--border);
+        flex-direction:column;
+      }
+
+      .nav-links.open{
+        display:flex;
+      }
+
+      .menu{
+        display:block;
+      }
+
+      .hero-grid,
+      .contact-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .hero-card{
+        min-height:400px;
+      }
+
+      .services,
+      .projects{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .process{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:560px){
+
+      h1{
+        font-size:3.15rem;
+      }
+
+      section{
+        padding:80px 0;
+      }
+
+      .services,
+      .projects,
+      .process,
+      .form-row{
+        grid-template-columns:1fr;
+      }
+
+      .hero-card{
+        min-height:350px;
+        padding:15px;
+      }
+
+      .mockup{
+        inset:55px 18px 18px;
+      }
+
+      .mock-body{
+        padding:20px;
+      }
+
+      .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a class="logo" href="#home">
+        Nova<span>Craft</span> Studio
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="nav-cta">Start a Project</a>
+      </div>
+
+      <div class="menu" id="menu">☰</div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            <span class="dot"></span>
+            Available for new projects
+          </div>
+
+          <h1>
+            We craft
+            <span class="gradient">digital experiences</span>
+            that stand out.
+          </h1>
+
+          <p>
+            NovaCraft Studio designs and develops premium,
+            responsive websites for modern businesses,
+            creators and growing brands.
+          </p>
+
+          <div class="buttons">
+
+            <a class="btn btn-primary" href="#contact">
+              Start a Project ↗
+            </a>
+
+            <a class="btn btn-secondary" href="#work">
+              Explore Our Work
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+          <div class="orb one"></div>
+          <div class="orb two"></div>
+
+          <div class="mockup">
+
+            <div class="mock-top">
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+
+            <div class="mock-body">
+
+              <div class="mock-line big"></div>
+
+              <div class="mock-line mid"></div>
+
+              <div class="mock-line" style="width:84%"></div>
+
+              <div class="mock-boxes">
+
+                <div class="mock-box"></div>
+                <div class="mock-box"></div>
+                <div class="mock-box"></div>
+                <div class="mock-box"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section id="services">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            What we do
+          </div>
+
+          <h2>
+            Everything your brand needs to look premium online.
+          </h2>
+
+          <p>
+            From the first layout to the final launch,
+            every detail is designed around your goals.
+          </p>
+
+        </div>
+
+
+        <div class="services">
+
+          <article class="service">
+
+            <div class="icon">✦</div>
+
+            <h3>
+              Web Design
+            </h3>
+
+            <p>
+              Modern, conversion-focused layouts with a clean
+              visual identity and thoughtful user experience.
+            </p>
+
+          </article>
+
+
+          <article class="service">
+
+            <div class="icon">⌘</div>
+
+            <h3>
+              Web Development
+            </h3>
+
+            <p>
+              Fast, responsive and reliable websites built
+              with clean, maintainable front-end code.
+            </p>
+
+          </article>
+
+
+          <article class="service">
+
+            <div class="icon">◈</div>
+
+            <h3>
+              UI / UX
+            </h3>
+
+            <p>
+              Intuitive interfaces that make it easy for
+              visitors to understand your brand and take action.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WORK -->
+
+    <section id="work">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            Selected work
+          </div>
+
+          <h2>
+            Designed to make a strong first impression.
+          </h2>
+
+          <p>
+            A few example directions for modern digital brands.
+          </p>
+
+        </div>
+
+
+        <div class="projects">
+
+          <article class="project">
+
+            <small>
+              Business
+            </small>
+
+            <h3>
+              Corporate Website
+            </h3>
+
+            <p>
+              Professional layout built to communicate
+              trust and expertise.
+            </p>
+
+          </article>
+
+
+          <article class="project">
+
+            <small>
+              Creative
+            </small>
+
+            <h3>
+              Personal Brand
+            </h3>
+
+            <p>
+              A bold portfolio experience focused on work,
+              story and personality.
+            </p>
+
+          </article>
+
+
+          <article class="project">
+
+            <small>
+              Startup
+            </small>
+
+            <h3>
+              Product Landing Page
+            </h3>
+
+            <p>
+              A focused landing page designed around
+              clarity and conversions.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section id="process">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="kicker">
+            Our process
+          </div>
+
+          <h2>
+            Simple process. Serious results.
+          </h2>
+
+        </div>
+
+
+        <div class="process">
+
+          <div class="step">
+
+            <div class="step-number">
+              01 / DISCOVER
+            </div>
+
+            <h3>
+              Understand
+            </h3>
+
+            <p>
+              We learn about your brand, audience and goals.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">
+              02 / DESIGN
+            </div>
+
+            <h3>
+              Design
+            </h3>
+
+            <p>
+              We turn the strategy into a polished visual direction.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">
+              03 / BUILD
+            </div>
+
+            <h3>
+              Develop
+            </h3>
+
+            <p>
+              We build the responsive website and refine every detail.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">
+              04 / LAUNCH
+            </div>
+
+            <h3>
+              Launch
+            </h3>
+
+            <p>
+              Your finished website goes live and is ready for visitors.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-wrap">
+
+          <div class="contact-info">
+
+            <div class="kicker">
+              Let's work together
+            </div>
+
+            <h2>
+              Have an idea?
+            </h2>
+
+            <p>
+              Tell us what you're building.
+              We'll get back to you with the next steps.
+            </p>
+
+
+            <div class="contact-item">
+
+              <span>
+                Email
+              </span>
+
+              <a href="mailto:studionovacraft770@gmail.com">
+                studionovacraft770@gmail.com
+              </a>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <span>
+                Services
+              </span>
+
+              <div>
+                Web Design · Development · UI/UX
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- FORMSUBMIT FORM -->
+
+          <form
+            action="https://formsubmit.co/studionovacraft770@gmail.com"
+            method="POST"
+          >
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Project Inquiry — NovaCraft Studio"
+            >
+
+            <input
+              type="hidden"
+              name="_captcha"
+              value="false"
+            >
+
+            <input
+              type="hidden"
+              name="_template"
+              value="table"
+            >
+
+
+            <div class="form-row">
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+              >
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+              >
+
+            </div>
+
+
+            <input
+              type="text"
+              name="project"
+              placeholder="Project type"
+            >
+
+
+            <textarea
+              name="message"
+              placeholder="Tell us about your project..."
+              required
+            ></textarea>
+
+
+            <button
+              class="btn btn-primary submit"
+              type="submit"
+            >
+              Send Project Inquiry ↗
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+        © <span id="year"></span>
+        <strong>NovaCraft Studio</strong>.
+        All rights reserved.
+      </div>
+
+      <div>
+        Web Design · Development · UI/UX
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const menu = document.getElementById("menu");
+
+    const navLinks = document.getElementById("navLinks");
+
+
+    menu.addEventListener("click", () => {
+
+      navLinks.classList.toggle("open");
+
+    });
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("open");
+
+        });
+
+      });
+
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
